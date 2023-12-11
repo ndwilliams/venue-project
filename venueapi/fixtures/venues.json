@@ -1,0 +1,67 @@
+[
+	{
+		"model": "venueapi.venue",
+		"pk": 1,
+		"fields": {
+			"venue_outside_image_url": "https://media.gettyimages.com/id/1210220066/photo/over-20-dead-after-tornadoes-roar-across-tennessee-including-nashville.jpg?s=1024x1024&w=gi&k=20&c=kCFWBRQOjh2ZzdbgjfaMxNkAt4SqzljfBsJpp66g4UI=",
+			"venue_inside_image_url": "https://img.vggcdn.net/img/v/v3/27380/400x600.jpeg",
+			"name": "The Basement East",
+			"address": "917 Woodland St, Nashville, TN 37206",
+			"capacity": 575,
+			"about_section": "Established in May 2015, The Basement East (“THE BEAST”) serves as the only mid-sized music venue in East Nashville’s burgeoning Five Points neighborhood. Featuring a state of the art Meyer sound system, multiple bars, and plenty of free parking, BEAST has already earned a reputation as both a destination for touring artists and as the preferred venue of East Nashville’s diverse creative community. With its scalable design and an array of seating options, BEAST is able to host intimate industry showcases, standup comedy shows and SRO concerts of all genres.",
+			"active": true
+		}
+	},
+	{
+		"model": "venueapi.venue",
+		"pk": 2,
+		"fields": {
+			"venue_outside_image_url": "https://nashvilleguru.com/officialwebsite/wp-content/uploads/2021/05/Germantown-Nashville-2021-107.jpg",
+			"venue_inside_image_url": "https://www.tennessean.com/gcdn/presto/2020/06/01/PNAS/82b072db-6a2c-4ed8-ab58-485c980e373c-49946995856_12371e61ba_o.jpg?width=1320&height=880&fit=crop&format=pjpg&auto=webp",
+			"name": "Brooklyn Bowl Nashville",
+			"address": "925 3rd Ave N, Nashville, TN 37201",
+			"capacity": 1200,
+			"about_section": "Brooklyn Bowl Nashville is the ultimate night out. With its groundbreaking integration of premiere music, 19 lanes of bowling where you can eat, drink, and catch a show, four bars featuring locally crafted beers, and food by the acclaimed Blue Ribbon Restaurant group, Brooklyn Bowl offers concert and casual bowling experiences that you won't find anywhere else. The unique space is also able to accommodate private events of any size. Whether you’re celebrating a birthday, hosting a corporate event, or tying the knot – rent a lane, the patio, or take over the whole space for you and up to 1,200 of your closest friends. Located in the heart of Germantown, adjacent to First Horizon Baseball Park, the venue is Brooklyn Bowl’s third location outside of its flagship in Williamsburg, Brooklyn.",
+			"active": true
+		}
+	},
+	{
+		"model": "venueapi.venue",
+		"pk": 3,
+		"fields": {
+			"venue_outside_image_url": "https://lh3.googleusercontent.com/p/AF1QipPAs_VUVVYsFbJk1UkQWSwQEE1COn6_RZos89Og=s1360-w1360-h1020",
+			"venue_inside_image_url": "https://www.indieonthemove.com/resize/18236604_1398620406892916_1111976745_o.jpg",
+			"name": "The Bowery Vault",
+			"address": "2905C Gallatin Pike 2nd Level Suite C, Nashville, TN 37216",
+			"capacity": 75,
+			"about_section": "Founders Vero Sanchez, NYC native songwriter/fashion stylist and Nashville’s Emily Zimmer, musician/sound engineer worked a full year to transform an old East Nashville brothel for grand opening in 2016. This power duo designed an inviting space where people can explore fashion along with creating a great sounding room where artists and audiences can connect. Now a Nashville staple, The Bowery Vault is where music and fashion lovers can shop, drink and listen to original live music in an intimate setting. This one of a kind boutique and lounge is small but packs a big experience. It’s well curated spread of vintage and custom threads are displayed beside a traditional foot lit stage with lush velvet curtains where table seating and a candlelit beer/ espresso bar complete the vibe.",
+			"active": true
+		}
+	},
+	{
+		"model": "venueapi.venue",
+		"pk": 4,
+		"fields": {
+			"venue_outside_image_url": "https://images.squarespace-cdn.com/content/v1/5db0f93b28a93917fe946d6b/1572870300661-MQJ76E073R2EU6S9FMNK/marathon-exterior-13.jpg?format=1000w",
+			"venue_inside_image_url": "https://images.squarespace-cdn.com/content/v1/5db0f93b28a93917fe946d6b/1575314643061-Q5ENEPP2S4598HN6L1VY/NF+%40+MMW+by+Andrew+Sarta_2.jpg?format=1000w",
+			"name": "Marathon Music Works",
+			"address": "1402 Clinton St, Nashville, TN 37203",
+			"capacity": 1800,
+			"about_section": "The venue that started it all. Originally built in the early 1900’s as an auto manufacturing plant, Marathon Music Works opened its doors in 2011 as a concert and event venue. With a standing room capacity of over 1,700, it has quickly become Nashville’s most prominent mid-sized venue. The industrial chic design makes for incredible events and the wide space of the main floor makes for an electric concert experience. It truly is an incredibly versatile space.",
+			"active": true
+		}
+	},
+	{
+		"model": "venueapi.venue",
+		"pk": 5,
+		"fields": {
+			"venue_outside_image_url": "https://pbs.twimg.com/media/Dm7NJ00W4AAFye6?format=jpg&name=4096x4096",
+			"venue_inside_image_url": "https://img.restaurantguru.com/re54-The-Cobra-interior-2022-10-2.jpg",
+			"name": "The Cobra",
+			"address": "2511 Gallatin Avenue Nashville, TN 37206",
+			"capacity": 260,
+			"about_section": "Formerly The FooBAR. East Nashville bar/local hang. Shows can take place any night of the week in the back room (larger, smoke free) or front room (smaller, smoking). Open mic takes place in the front room and acoustic performances can take place outside.",
+			"active": true
+		}
+	}
+]
