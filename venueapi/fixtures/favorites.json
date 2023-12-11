@@ -1,0 +1,90 @@
+[
+	{
+		"model": "venueapi.favorite",
+		"pk": 1,
+		"fields": {
+			"user": 1,
+			"concert": 1
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 2,
+		"fields": {
+			"user": 1,
+			"concert": 2
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 3,
+		"fields": {
+			"user": 2,
+			"concert": 2
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 4,
+		"fields": {
+			"user": 2,
+			"concert": 8
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 5,
+		"fields": {
+			"user": 4,
+			"concert": 3
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 6,
+		"fields": {
+			"user": 5,
+			"concert": 4
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 7,
+		"fields": {
+			"user": 2,
+			"concert": 5
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 8,
+		"fields": {
+			"user": 3,
+			"concert": 10
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 9,
+		"fields": {
+			"user": 1,
+			"concert": 7
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 10,
+		"fields": {
+			"user": 5,
+			"concert": 4
+		}
+	},
+	{
+		"model": "venueapi.favorite",
+		"pk": 1,
+		"fields": {
+			"user": 2,
+			"concert": 10
+		}
+	}
+]
