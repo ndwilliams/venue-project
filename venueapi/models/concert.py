@@ -6,5 +6,6 @@ class Concert(models.Model):
     band = models.ForeignKey('Band', on_delete=models.CASCADE, related_name='concerts_this_band_plays')
     doors_open = models.DateTimeField(auto_now_add=False)
     show_starts = models.DateTimeField(auto_now_add=False)
+    active = models.BooleanField(default=True)
     users_who_favorited = models.ManyToManyField(User, through='Favorite', related_name='concerts_favorited')
     opening_bands = models.ManyToManyField('Band', through='Opener', related_name='concerts_opened')
