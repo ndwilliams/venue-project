@@ -1,0 +1,82 @@
+[
+	{
+		"model": "venueapi.band",
+		"pk": 1,
+		"fields": {
+			"name": "Arctic Monkeys",
+			"genre": "Alternative Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 2,
+		"fields": {
+			"name": "Fleetwood Mac",
+			"genre": "Soft Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 3,
+		"fields": {
+			"name": "Radiohead",
+			"genre": "Experimental Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 4,
+		"fields": {
+			"name": "Imagine Dragons",
+			"genre": "Pop Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 5,
+		"fields": {
+			"name": "The Strokes",
+			"genre": "Garage Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 6,
+		"fields": {
+			"name": "Florence + The Machine",
+			"genre": "Baroque Pop"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 7,
+		"fields": {
+			"name": "Red Hot Chili Peppers",
+			"genre": "Funk Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 8,
+		"fields": {
+			"name": "Mumford & Sons",
+			"genre": "Folk Rock"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 9,
+		"fields": {
+			"name": "Paramore",
+			"genre": "Pop Punk"
+		}
+	},
+	{
+		"model": "venueapi.band",
+		"pk": 10,
+		"fields": {
+			"name": "Daft Punk",
+			"genre": "Electronic/Dance"
+		}
+	}
+]
