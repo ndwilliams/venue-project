@@ -66,8 +66,8 @@ class VenueViewSet(viewsets.ViewSet):
                 venue.active = serializer.validated_data['active']
                 venue.save()
 
-                serializer = VenueSerializer(venue, context={'request': request})
-                return Response(None, status.HTTP_204_NO_CONTENT)
+                updated_serializer = VenueSerializer(venue, context={'request': request})
+                return Response(updated_serializer.data, status.HTTP_200_OK)
             
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
         except Venue.DoesNotExist:
