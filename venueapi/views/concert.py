@@ -58,7 +58,7 @@ class ConcertViewSet(ViewSet):
                 concert.doors_open = serializer.validated_data['doors_open']
                 concert.show_starts = serializer.validated_data['show_starts']
                 concert.active = serializer.validated_data['active']
-                concert.opening_bands = serializer.validated_data['opening_bands']
+                # concert.opening_bands = serializer.validated_data['opening_bands']
                 concert.save()
 
                 updated_serializer = ConcertSerializer(concert, context={'request': request})
