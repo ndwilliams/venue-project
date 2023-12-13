@@ -1,11 +1,12 @@
 from django.contrib import admin
 from django.urls import include, path
 from rest_framework import routers
-from venueapi.views import register_user, login_user, BandViewSet, VenueViewSet
+from venueapi.views import register_user, login_user, BandViewSet, VenueViewSet, ConcertViewSet
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'bands', BandViewSet, 'band')
 router.register(r'venues', VenueViewSet, 'venue')
+router.register(r'concerts', ConcertViewSet, 'concert')
 
 urlpatterns = [
     path('', include(router.urls)),
