@@ -12,11 +12,24 @@ class ConcertSerializer(serializers.ModelSerializer):
     opening_bands = BandSerializer(many=True)
     band = BandSerializer(many=False)
     venue = VenueSerializer(many=False)
+    current_user_is_favorited = serializers.SerializerMethodField()
+
+    def get_current_user_is_favorited(self, obj):
+        # get the current user id through the request
+        current_user_id = self.context['request'].user.id
+
+        # Check the Users who have Favorited each Concert through related_name
+        user_favorite = obj.users_who_favorited.filter(id=current_user_id)
+
+        if user_favorite.exists():
+            return True
+        else:
+            return False
 
     class Meta:
         model = Concert
         fields = ['id', 'venue', 'band', 'doors_open',
-                   'show_starts', 'active', 'opening_bands']
+                   'show_starts', 'active', 'opening_bands', 'current_user_is_favorited']
         
 class ConcertViewSet(ViewSet):
     def list(self, request):
