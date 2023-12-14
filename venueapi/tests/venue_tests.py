@@ -54,7 +54,7 @@ class VenueTests(APITestCase):
             self.assertIn("capacity", obj)
             self.assertIn("about_section", obj)
             self.assertIn("active", obj)
-    
+                
     def test_get_venue(self):
         venue = Venue()
         venue.venue_outside_image_url = "www.outsideimage.com"
