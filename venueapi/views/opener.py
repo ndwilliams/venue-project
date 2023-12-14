@@ -2,9 +2,9 @@ from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
 from venueapi.models import Opener, Band, Concert
-from django.contrib.auth.models import User
 
 class OpenerSerializer(serializers.ModelSerializer):
+
     class Meta:
         model = Opener
         fields = ['id', 'concert', 'band']
