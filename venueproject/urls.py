@@ -1,5 +1,6 @@
 from django.contrib import admin
-from django.urls import include, path
+from django.urls import path
+from django.conf.urls import include
 from rest_framework import routers
 from venueapi.views import register_user, login_user, BandViewSet, VenueViewSet, ConcertViewSet, OpenerViewSet, FavoriteViewSet 
 

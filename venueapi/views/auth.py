@@ -4,6 +4,7 @@ from rest_framework.authtoken.models import Token
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
+from rest_framework import status
 
 
 @api_view(['POST'])
@@ -29,11 +30,11 @@ def login_user(request):
             'token': token.key,
             'user_id': authenticated_user.id
         }
-        return Response(data)
+        return Response(data, status=status.HTTP_200_OK)
     else:
         # Bad login details were provided. So we can't log the user in.
         data = {'valid': False}
-        return Response(data)
+        return Response(data, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['POST'])
@@ -58,5 +59,5 @@ def register_user(request):
     # Use the REST Framework's token generator on the new user account
     token = Token.objects.create(user=new_user)
     # Return the token to the client
-    data = {'token': token.key}
+    data = {'token': token.key, 'user_id': new_user.id}
     return Response(data)
