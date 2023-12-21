@@ -33,7 +33,7 @@ class ConcertSerializer(serializers.ModelSerializer):
         
 class ConcertViewSet(ViewSet):
     def list(self, request):
-        concerts = Concert.objects.all()
+        concerts = Concert.objects.order_by('show_starts').all()
         serializer = ConcertSerializer(concerts, many=True, context={'request': request})
         return Response(serializer.data)
     
