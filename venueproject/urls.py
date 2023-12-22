@@ -2,7 +2,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 from rest_framework import routers
-from venueapi.views import register_user, login_user, BandViewSet, VenueViewSet, ConcertViewSet, OpenerViewSet, FavoriteViewSet 
+from venueapi.views import register_user, login_user, BandViewSet, VenueViewSet, ConcertViewSet, OpenerViewSet, FavoriteViewSet, UserViewSet 
 
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'bands', BandViewSet, 'band')
@@ -10,6 +10,7 @@ router.register(r'venues', VenueViewSet, 'venue')
 router.register(r'concerts', ConcertViewSet, 'concert')
 router.register(r'openers', OpenerViewSet, 'opener')
 router.register(r'favorites', FavoriteViewSet, 'favorite')
+router.register(r'users', UserViewSet, 'user')
 
 urlpatterns = [
     path('', include(router.urls)),
