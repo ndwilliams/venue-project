@@ -6,8 +6,8 @@ from django.contrib.auth.models import User
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
-        fields = ['id', 'first_name', 'last_name', 'email', 'username', 'is_staff', 
-                  'is_superuser'] 
+        fields = ['id', 'first_name', 'last_name', 
+                  'email', 'username', 'is_staff', 'is_superuser'] 
         
 class UserViewSet(viewsets.ViewSet):
 
@@ -27,21 +27,17 @@ class UserViewSet(viewsets.ViewSet):
     def update(self, request, pk=None):
         try:
             user = User.objects.get(pk=pk)
-
-            serializer = UserSerializer(data=request.data)
-            if serializer.is_valid():
-                user.first_name = serializer.validated_data['first_name']
-                user.first_name = serializer.validated_data['last_name']
-                user.email = serializer.validated_data['email']
-                user.username = serializer.validated_data['username']
-                user.is_staff = serializer.validated_data['is_staff']
-                user.is_superuser = serializer.validated_data['is_superuser']
-                user.save()
-
-                updated_serializer = UserSerializer(user, context={'request': request})
-                return Response(updated_serializer.data, status.HTTP_200_OK)
             
-            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
+            user.first_name = request.data['first_name']
+            user.last_name = request.data['last_name']
+            user.email = request.data['email']
+            user.username = request.data['username']
+            user.is_staff = request.data['is_staff']
+            user.is_superuser = request.data['is_superuser']
+            user.save()
+
+            updated_serializer = UserSerializer(user, context={'request': request})
+            return Response(updated_serializer.data, status.HTTP_200_OK)
         
         except User.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
