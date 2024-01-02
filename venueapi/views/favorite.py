@@ -3,15 +3,18 @@ from rest_framework.response import Response
 from rest_framework import serializers, status
 from venueapi.models import Concert, Favorite
 from django.contrib.auth.models import User
+from venueapi.views.concert import ConcertSerializer
 
 class FavoriteSerializer(serializers.ModelSerializer):
+    concert = ConcertSerializer(many=False)
     class Meta:
         model = Favorite
-        fields= ['id', 'concert_id', 'user_id']
+        fields= ['id', 'concert', 'user_id']
 
 class FavoriteViewSet(ViewSet):
     def list(self, request):
-        favorites = Favorite.objects.all()
+        user_id = request.user.id
+        favorites = Favorite.objects.filter(user_id=user_id)
         serializer = FavoriteSerializer(favorites, many=True, context={'request': request})
         return Response(serializer.data)
     

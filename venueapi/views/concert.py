@@ -1,7 +1,7 @@
 from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework import serializers, status
-from venueapi.models import Concert, Venue, Band
+from venueapi.models import Concert, Favorite, Venue, Band
 from venueapi.views.opener import OpenerSerializer
 from venueapi.views.band import BandSerializer
 from venueapi.views.venue import VenueSerializer
