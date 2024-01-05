@@ -71,24 +71,23 @@ class ConcertViewSet(ViewSet):
     def update(self, request, pk=None):
         try:
             concert = Concert.objects.get(pk=pk)
+            band = Band.objects.get(pk=request.data['band'])
+            venue= Venue.objects.get(pk=request.data['venue'])
 
-            serializer = ConcertSerializer(data=request.data)
-            if serializer.is_valid():
-                concert.venue = serializer.validated_data['venue']
-                concert.band = serializer.validated_data['band']
-                concert.doors_open = serializer.validated_data['doors_open']
-                concert.show_starts = serializer.validated_data['show_starts']
-                concert.active = serializer.validated_data['active']
-                concert.save()
+            concert.venue = venue
+            concert.band = band
+            concert.doors_open = request.data.get('doors_open')
+            concert.show_starts = request.data.get('show_starts')
+            concert.active = request.data.get('active')
+            concert.save()
 
-                opener_ids = request.data.get('opening_bands', [])
-                concert.opening_bands.set(opener_ids)
+            opener_ids = request.data.get('opening_bands', [])
+            concert.opening_bands.set(opener_ids)
 
-                updated_serializer = ConcertSerializer(concert, context={'request': request})
-                return Response(updated_serializer.data, status.HTTP_200_OK)
+            updated_serializer = ConcertSerializer(concert, context={'request': request})
+            return Response(updated_serializer.data, status.HTTP_200_OK)
             
-            return Response(serializer.errors, status.HTTP_400_BAD_REQUEST)
-        
+                    
         except Concert.DoesNotExist:
             return Response(status=status.HTTP_404_NOT_FOUND)
 

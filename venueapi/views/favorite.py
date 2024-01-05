@@ -13,10 +13,19 @@ class FavoriteSerializer(serializers.ModelSerializer):
 
 class FavoriteViewSet(ViewSet):
     def list(self, request):
-        user_id = request.user.id
-        favorites = Favorite.objects.filter(user_id=user_id)
+        user_param = request.query_params.get('user')
+
+        if user_param == 'current':
+            try:
+                user_id = request.user.id
+                favorites = Favorite.objects.filter(user_id=user_id)
+            except ValueError:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+        else:
+            favorites = Favorite.objects.all()
+        
         serializer = FavoriteSerializer(favorites, many=True, context={'request': request})
-        return Response(serializer.data)
+        return Response(serializer.data)       
     
     def create(self, request):
         user = User.objects.get(pk=request.user.id)
@@ -33,7 +42,7 @@ class FavoriteViewSet(ViewSet):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         except Exception as ex:
             return Response(None, status=status.HTTP_404_NOT_FOUND)
-        
+
     def destroy(self, request, pk=None):
         try:
             favorite = Favorite.objects.get(pk=pk)
