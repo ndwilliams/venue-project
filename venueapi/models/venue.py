@@ -7,4 +7,4 @@ class Venue(models.Model):
     address = models.CharField(max_length=300, null=True, blank=True)
     capacity = models.IntegerField(null=True, blank=True)
     about_section = models.TextField(null=True, blank=True)
-    active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True, blank=True)
