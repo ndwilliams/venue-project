@@ -33,7 +33,18 @@ class ConcertSerializer(serializers.ModelSerializer):
         
 class ConcertViewSet(ViewSet):
     def list(self, request):
-        concerts = Concert.objects.order_by('show_starts').all()
+        user_param = request.query_params.get('user')
+
+        if user_param == 'admin':
+
+            try:
+                concerts = Concert.objects.order_by('show_starts').all()
+            except ValueError:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+        else:
+            filtered_concerts = Concert.objects.filter(active=1)
+            concerts = filtered_concerts.order_by('show_starts')
+
         serializer = ConcertSerializer(concerts, many=True, context={'request': request})
         return Response(serializer.data)
     
